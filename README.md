@@ -108,7 +108,7 @@ Confira os valores na [documentação oficial do GitHub Pages](https://docs.gith
 ## Pendências antes de divulgar
 
 - [ ] Criar a caixa `contato@pardimtech.com.br` (o CTA principal aponta para ela).
-- [ ] Publicar o PDF de exemplo de relatório e preencher `links.exemploRelatorio`.
+- [ ] **PDF de exemplo do relatório de assessment:** montar uma versão anonimizada, com dados claramente fictícios (formato do mapa de achados), publicar em `public/assets/` e preencher `links.exemploRelatorio` em `src/siteData.mjs`. Enquanto o campo estiver vazio, o botão "Baixar exemplo (PDF)" fica oculto e o bloco mostra só o texto.
 - [ ] Adicionar a foto profissional em `public/assets/` e preencher `sobre.foto`.
 - [ ] Depoimentos autorizados por escrito, quando houver.
 - [ ] Opcional: `links.linkedin` e `empresa.cnpj`.
