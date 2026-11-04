@@ -1,6 +1,6 @@
 # pardimtech-site
 
-Landing page da **Pardim Tecnologia — Consultoria em infraestrutura e cloud**, publicada em [pardimtech.com.br](https://pardimtech.com.br) via GitHub Pages.
+Repositório da organização [`pardimtech`](https://github.com/pardimtech). Landing page da **Pardim Tecnologia — Consultoria em infraestrutura e cloud**, publicada em [pardimtech.com.br](https://pardimtech.com.br) via GitHub Pages.
 
 ## Princípios
 
@@ -56,7 +56,8 @@ O workflow `.github/workflows/deploy.yml` faz o build e a validação em todo PR
 
 1. **Settings → Pages → Build and deployment → Source:** `GitHub Actions`.
 2. **Settings → Pages → Custom domain:** `pardimtech.com.br` e, depois que o DNS propagar, marque **Enforce HTTPS**.
-3. Recomendado: **verificar o domínio** em *Settings da conta → Pages → Verified domains*, para evitar que outro repositório assuma o domínio.
+3. Recomendado: **verificar o domínio** em *Settings da organização `pardimtech` → Pages → Verified domains*, para evitar que outro repositório assuma o domínio.
+4. Na conta Free da organização, o Pages só publica **repositório público**.
 
 ### DNS no Registro.br
 
@@ -70,7 +71,7 @@ O workflow `.github/workflows/deploy.yml` faz o build e a validação em todo PR
 | AAAA | `@` | `2606:50c0:8001::153` |
 | AAAA | `@` | `2606:50c0:8002::153` |
 | AAAA | `@` | `2606:50c0:8003::153` |
-| CNAME | `www` | `magoroot.github.io` |
+| CNAME | `www` | `pardimtech.github.io` |
 
 Confira os valores na [documentação oficial do GitHub Pages](https://docs.github.com/pt/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) antes de aplicar. Se o e-mail `contato@pardimtech.com.br` for hospedado em outro provedor, os registros MX e TXT (SPF, DKIM e DMARC) convivem com esses sem conflito.
 
