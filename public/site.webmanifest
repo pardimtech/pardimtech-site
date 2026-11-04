@@ -1,0 +1,14 @@
+{
+  "name": "Pardim Tecnologia",
+  "short_name": "Pardim",
+  "description": "Consultoria em infraestrutura e cloud",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F4F7F8",
+  "theme_color": "#F4F7F8",
+  "icons": [
+    { "src": "/assets/brand/pardim-icone-selo-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/assets/brand/pardim-icone-selo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

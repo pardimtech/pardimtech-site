@@ -1,0 +1,15 @@
+{
+  "name": "pardimtech-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page da Pardim Tecnologia (pardimtech.com.br)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "check": "npx --yes html-validate@11 dist/index.html dist/404.html"
+  }
+}
