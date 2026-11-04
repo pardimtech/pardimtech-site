@@ -42,7 +42,7 @@ const jsonLd = (d) => {
     },
     areaServed: { "@type": "Country", name: "Brasil" },
     founder: { "@type": "Person", name: d.sobre.nome, jobTitle: d.sobre.cargo },
-    knowsAbout: d.tecnologias.grupos.flatMap((g) => g.itens),
+    knowsAbout: [...new Set(d.areas.itens.flatMap((a) => [a.titulo, ...a.tecnologias]))],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Serviços",
@@ -191,6 +191,27 @@ export function renderPage(d, { css, logo, logoNegativo, ano }) {
       </div>
     </section>
 
+    <section class="secao areas" id="areas" aria-labelledby="areas-titulo">
+      <div class="wrap">
+        <div class="secao-cabeca">
+          <h2 id="areas-titulo">${esc(d.areas.titulo)}</h2>
+          <p>${esc(d.areas.intro)}</p>
+        </div>
+        <ul class="areas-grade">
+          ${d.areas.itens
+            .map(
+              (a) => `<li>
+            <h3>${esc(a.titulo)}</h3>
+            <p>${esc(a.texto)}</p>
+            <ul class="chips" aria-label="Tecnologias">${a.tecnologias.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
+          </li>`
+            )
+            .join("\n          ")}
+        </ul>
+        <p class="aviso">${esc(d.areas.nota)}</p>
+      </div>
+    </section>
+
     <section class="secao metodo" id="metodo" aria-labelledby="metodo-titulo">
       <div class="wrap">
         <h2 id="metodo-titulo">${esc(d.metodo.titulo)}</h2>
@@ -210,32 +231,6 @@ export function renderPage(d, { css, logo, logoNegativo, ano }) {
             ${d.metodo.limites.itens.map((x) => `<li>${esc(x)}</li>`).join("\n            ")}
           </ul>
         </div>
-      </div>
-    </section>
-
-    <section class="secao sankhya" id="sankhya" aria-labelledby="sankhya-titulo">
-      <div class="wrap duas-colunas">
-        <div>
-          <h2 id="sankhya-titulo">${esc(d.sankhya.titulo)}</h2>
-          <p class="lead-sm">${esc(d.sankhya.texto)}</p>
-          <p class="aviso">${esc(d.sankhya.aviso)}</p>
-        </div>
-        <ul class="lista-sq">
-          ${d.sankhya.itens.map((x) => `<li>${esc(x)}</li>`).join("\n          ")}
-        </ul>
-      </div>
-    </section>
-
-    <section class="secao tecnologias" aria-labelledby="tec-titulo">
-      <div class="wrap">
-        <h2 id="tec-titulo">${esc(d.tecnologias.titulo)}</h2>
-        <dl class="tec-grade">
-          ${d.tecnologias.grupos
-            .map(
-              (g) => `<div><dt>${esc(g.nome)}</dt><dd><ul>${g.itens.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></dd></div>`
-            )
-            .join("\n          ")}
-        </dl>
       </div>
     </section>
 
@@ -291,6 +286,7 @@ export function renderPage(d, { css, logo, logoNegativo, ano }) {
       </div>
       <div>
         <p><a href="mailto:${esc(d.contato.email)}">${esc(d.contato.email)}</a></p>
+        ${d.contato.whatsapp ? `<p><a href="${esc(whatsappUrl(d.contato))}" rel="noopener" target="_blank">WhatsApp ${esc(d.contato.whatsappExibicao || d.contato.whatsapp)}<span class="sr-only"> (abre em nova aba)</span></a></p>` : ""}
         <p>${esc(d.rodape.privacidade)}</p>
         <p>© ${ano} ${esc(empresa.nome)}</p>
       </div>

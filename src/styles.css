@@ -181,23 +181,15 @@ a:hover { color: var(--petroleo-escuro); }
 
 .duas-colunas { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 2.5rem 4rem; align-items: start; }
 
-/* Sankhya */
-.sankhya h2 { margin-bottom: 1.5rem; }
-.lead-sm { font-size: var(--t-md); line-height: 1.55; max-width: 34em; }
-.aviso { margin-top: 1.75rem; padding-left: 1rem; border-left: 2px solid var(--linha); font-size: var(--t-sm); color: var(--aco); max-width: 38em; }
-.lista-sq { background: var(--branco); border: 1px solid var(--linha); border-radius: var(--raio); }
-.lista-sq li { display: flex; gap: 0.9rem; align-items: baseline; padding: 1rem 1.25rem; border-bottom: 1px solid var(--linha); }
-.lista-sq li:last-child { border-bottom: 0; }
-.lista-sq li::before { content: ""; flex: none; width: 0.55rem; height: 0.55rem; background: var(--petroleo); transform: translateY(-0.05em); }
-
-/* Tecnologias */
-.tecnologias { background: var(--branco); border-block: 1px solid var(--linha); }
-.tecnologias h2 { margin-bottom: 3rem; }
-.tec-grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.25rem 3rem; margin: 0; }
-.tec-grade dt { font-size: var(--t-sm); font-weight: 600; color: var(--aco); margin-bottom: 0.6rem; }
-.tec-grade dd { margin: 0; }
-.tec-grade ul { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-.tec-grade li { font-family: var(--mono); font-size: 0.875rem; padding: 0.25rem 0.6rem; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--nevoa); }
+/* Áreas de atuação */
+.areas { background: var(--branco); border-block: 1px solid var(--linha); }
+.areas-grade { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2.75rem 2.5rem; }
+.areas-grade > li { border-top: 2px solid var(--grafite); padding-top: 1.25rem; display: flex; flex-direction: column; }
+.areas-grade h3 { font-size: var(--t-md); font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.6rem; }
+.areas-grade p { color: var(--aco); font-size: 0.9688rem; margin-bottom: 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+.chips li { font-family: var(--mono); font-size: 0.8125rem; padding: 0.2rem 0.55rem; border: 1px solid var(--linha); border-radius: var(--raio); background: var(--nevoa); }
+.aviso { margin: 3rem 0 0; padding-left: 1rem; border-left: 2px solid var(--linha); font-size: var(--t-sm); color: var(--aco); max-width: 48em; }
 
 /* Sobre */
 .sobre h2 { margin-bottom: 1.5rem; }
@@ -248,7 +240,7 @@ a:hover { color: var(--petroleo-escuro); }
   .hero-grid, .secao-cabeca, .duas-colunas, .limites, .contato-caixa { grid-template-columns: minmax(0, 1fr); }
   .sintomas-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .passos { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.5rem; }
-  .tec-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .areas-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .footer-marca { grid-column: 1 / -1; }
   .hero h1 { max-width: 20ch; }
@@ -262,7 +254,7 @@ a:hover { color: var(--petroleo-escuro); }
   .degrau::before, .degrau:nth-child(1)::before { left: 0; }
 }
 @media (max-width: 40rem) {
-  .sintomas-lista, .passos, .tec-grade, .limites ul, .footer-grid { grid-template-columns: minmax(0, 1fr); }
+  .sintomas-lista, .passos, .areas-grade, .limites ul, .footer-grid { grid-template-columns: minmax(0, 1fr); }
   .degrau:nth-child(2), .degrau:nth-child(3) { margin-left: 0; }
   .ctas .btn { width: 100%; }
   .brand { width: 7.25rem; }

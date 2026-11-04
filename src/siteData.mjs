@@ -25,7 +25,8 @@ export const siteData = {
   contato: {
     email: "contato@pardimtech.com.br",
     // Formato internacional só com dígitos, ex.: "5562999999999". Vazio = botão oculto.
-    whatsapp: "",
+    whatsapp: "5562981554472",
+    whatsappExibicao: "(62) 98155-4472",
     whatsappMensagem:
       "Olá! Vim pelo site da Pardim Tecnologia e quero conversar sobre o meu ambiente.",
     assuntoEmail: "Conversa de diagnóstico (site)",
@@ -44,8 +45,8 @@ export const siteData = {
 
   nav: [
     { href: "#servicos", label: "Serviços" },
+    { href: "#areas", label: "Áreas de atuação" },
     { href: "#metodo", label: "Como funciona" },
-    { href: "#sankhya", label: "Sankhya" },
     { href: "#sobre", label: "Quem conduz" },
     { href: "#perguntas", label: "Perguntas" },
   ],
@@ -158,32 +159,54 @@ export const siteData = {
     },
   },
 
-  sankhya: {
-    titulo: "Infraestrutura para ambientes Sankhya",
-    texto:
-      "Em um ERP como o Sankhya OM, a lentidão raramente tem uma causa só. A Pardim investiga a infraestrutura que sustenta o sistema, cruzando servidor de aplicação, banco de dados, sistema operacional e rede para chegar à causa raiz.",
+  areas: {
+    titulo: "Áreas de atuação",
+    intro:
+      "Os três formatos de trabalho valem para qualquer uma destas frentes. O ponto de partida é sempre o problema do seu ambiente, não a ferramenta.",
     itens: [
-      "WildFly e JVM: memória, threads, coleta de lixo e conexões",
-      "Bancos Oracle e SQL Server no contexto do ERP",
-      "Servidores Linux e Windows Server",
-      "Jobs, serviços, backup e restauração",
-      "Migração para cloud e estabilização após a virada",
-      "Análise de causa raiz (RCA) e GMUD",
+      {
+        titulo: "Arquitetura e cloud",
+        texto: "Desenho, organização e revisão de ambientes em nuvem, com segregação por finalidade e dimensionamento compatível com a carga real.",
+        tecnologias: ["AWS", "Oracle Cloud (OCI)", "Microsoft Azure"],
+      },
+      {
+        titulo: "Migração para a nuvem",
+        texto: "Mapeamento de dependências, plano de janelas e retorno, rehost de servidores, cutover e estabilização depois da virada.",
+        tecnologias: ["Windows e Linux", "Cutover", "Estabilização"],
+      },
+      {
+        titulo: "Servidores, redes e conectividade",
+        texto: "Administração e troubleshooting de servidores, identidade, firewalls e integração entre ambientes locais e nuvem.",
+        tecnologias: ["Linux", "Windows Server", "Active Directory", "VMware", "Hyper-V", "Proxmox", "VPN IPsec", "FortiGate", "Sophos"],
+      },
+      {
+        titulo: "Bancos de dados e desempenho",
+        texto: "Investigação de lentidão cruzando aplicação, banco e infraestrutura: conexões, concorrência, índices e capacidade.",
+        tecnologias: ["Oracle", "SQL Server", "PostgreSQL", "MySQL e MariaDB"],
+      },
+      {
+        titulo: "Backup e continuidade",
+        texto: "Rotinas de backup com restauração testada, cópias em armazenamento de objeto e planejamento de recuperação com RPO e RTO definidos.",
+        tecnologias: ["Veeam", "Armazenamento em objeto", "RPO e RTO"],
+      },
+      {
+        titulo: "DevOps e automação",
+        texto: "Infraestrutura como código, padronização de configuração, containers e pipelines para reduzir trabalho manual e diferença entre ambientes.",
+        tecnologias: ["Terraform", "Ansible", "Docker", "Kubernetes", "CI/CD", "Bash e PowerShell"],
+      },
+      {
+        titulo: "Custos de cloud",
+        texto: "Leitura do consumo, comparação entre provedores e oportunidades de economia em recursos, arquitetura e licenciamento.",
+        tecnologias: ["FinOps", "AWS", "OCI", "Azure"],
+      },
+      {
+        titulo: "Infraestrutura para ERP",
+        texto: "Desempenho e disponibilidade de ambientes Sankhya OM: servidor de aplicação, banco de dados, jobs e servidores.",
+        tecnologias: ["Sankhya OM", "WildFly e JVM", "Oracle", "SQL Server"],
+      },
     ],
-    aviso:
-      "Atuação exclusiva em infraestrutura: não inclui consultoria funcional, implantação de módulos nem parametrização fiscal. A Pardim não é parceira oficial da Sankhya; Sankhya é marca de seu respectivo titular.",
-  },
-
-  tecnologias: {
-    titulo: "Tecnologias do dia a dia",
-    grupos: [
-      { nome: "Cloud", itens: ["AWS", "Oracle Cloud (OCI)", "Microsoft Azure"] },
-      { nome: "Servidores e virtualização", itens: ["Linux", "Windows Server", "Active Directory", "VMware", "Hyper-V", "Proxmox"] },
-      { nome: "Redes e segurança", itens: ["VPN IPsec", "FortiGate", "Sophos", "DNS", "Certificados TLS"] },
-      { nome: "Bancos de dados", itens: ["Oracle", "SQL Server", "PostgreSQL", "MySQL e MariaDB"] },
-      { nome: "Continuidade", itens: ["Backup e restauração", "Armazenamento em objeto", "DR com RPO e RTO"] },
-      { nome: "Migração", itens: ["Rehost Windows e Linux", "Cutover", "Estabilização"] },
-    ],
+    nota:
+      "Em ERP, a atuação é exclusiva em infraestrutura: não inclui consultoria funcional, implantação de módulos nem parametrização fiscal. A Pardim não é parceira oficial da Sankhya; Sankhya é marca de seu respectivo titular.",
   },
 
   sobre: {
@@ -227,8 +250,8 @@ export const siteData = {
         r: "Depende do escopo. O preço é apresentado na proposta, por escrito, antes de qualquer trabalho começar.",
       },
       {
-        p: "A Pardim faz consultoria funcional do Sankhya?",
-        r: "Não. A atuação é na infraestrutura que sustenta o ERP: servidores, banco de dados, WildFly e JVM, desempenho e disponibilidade.",
+        p: "Vocês atendem ambientes de ERP, como o Sankhya?",
+        r: "Sim, na infraestrutura que sustenta o sistema: servidores, banco de dados, WildFly e JVM, desempenho e disponibilidade. Não fazemos consultoria funcional, implantação de módulos nem parametrização fiscal.",
       },
       {
         p: "Trabalham com parceiros?",
